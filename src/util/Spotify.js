@@ -1,5 +1,5 @@
-const clientId = '***********************';
-const redirectUri =  'http://localhost:3000/';
+const clientId = 'ea20e7c49c094222bd9c88aa1da8b898';
+const redirectUri =  'http://localhost:3000';
 let accessToken;
 
 const Spotify = {
@@ -29,6 +29,7 @@ const Spotify = {
     },
     search(term) {
         const accessToken = Spotify.getAccessToken();
+        console.log('accessToken', accessToken)
         return fetch(`https://api.spotify.com/v1/search?type=track&q=${term}`, { 
             headers: {
             Authorization:`Bearer ${accessToken}`
